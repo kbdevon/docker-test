@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+
+  docker-image-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-container
+#    security_opt:
+#      - apparmor:docker-nginx-sample
+    cap_drop:
+      - net_raw
